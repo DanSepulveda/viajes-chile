@@ -50,4 +50,13 @@ $(function () {
             text: 'Correo enviado correctamente',
         })
     })
+    // FUNCTION 3 -- CHANGE IMAGE FILTER
+    const colors = ['grayscale(100%)', 'blur(3px)', 'contrast(50%)', 'opacity(30%)', 'sepia(10%)', 'none']
+
+    $('.card-img-top').click(function () {
+        const random = Math.floor(Math.random() * 6)
+        $(this).css({
+            'filter': `${colors[random]}`
+        })
+    })
 })

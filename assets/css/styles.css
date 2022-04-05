@@ -10,7 +10,8 @@ h2 {
     font-family: 'Ubuntu', sans-serif;
 }
 
-.icon {
+.icon,
+.card-img-top {
     cursor: pointer;
 }
 
