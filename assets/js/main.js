@@ -4,6 +4,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 
+
 // This function changes some elements classes to switch between dark and light mode
 const changeMode = (mode) => {
     if (mode === 'dark') {
@@ -19,6 +20,7 @@ const changeMode = (mode) => {
 
 // JQUERY CODE
 $(function () {
+    // FUNCTION 1 -- DARK MODE
     // Set localstorage item to remember user preference about dark/light mode
     let mode
     const storage = localStorage.getItem('mode')
@@ -37,5 +39,15 @@ $(function () {
         localStorage.setItem('mode', mode)
 
         changeMode(mode)
+    })
+    // FUNCTION 2 -- ALERT WHEN CLICKING FORM BUTTON
+    $('.submit').click(function (e) {
+        e.preventDefault()
+        // Swal.fire('Any fool can use a computer')
+        Swal.fire({
+            icon: 'success',
+            title: 'Bien',
+            text: 'Correo enviado correctamente',
+        })
     })
 })
