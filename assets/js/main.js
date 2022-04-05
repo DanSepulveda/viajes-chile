@@ -3,3 +3,39 @@ var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggl
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
+
+// This function changes some elements classes to switch between dark and light mode
+const changeMode = (mode) => {
+    if (mode === 'dark') {
+        $('body').removeClass('light')
+        $('.icon').removeClass('fa-moon')
+        $('.icon').addClass('fa-sun')
+    } else {
+        $('body').addClass('light')
+        $('.icon').removeClass('fa-sun')
+        $('.icon').addClass('fa-moon')
+    }
+}
+
+// JQUERY CODE
+$(function () {
+    // Set localstorage item to remember user preference about dark/light mode
+    let mode
+    const storage = localStorage.getItem('mode')
+    if (!storage) {
+        localStorage.setItem('mode', 'dark')
+        mode = 'dark'
+    } else {
+        mode = storage
+    }
+
+    changeMode(mode)
+
+    $('.icon').click(function () {
+        // Changes localstorage when users click on moon/sun icon
+        mode = mode === 'dark' ? 'light' : 'dark'
+        localStorage.setItem('mode', mode)
+
+        changeMode(mode)
+    })
+})

@@ -9,3 +9,34 @@ body {
 h2 {
     font-family: 'Ubuntu', sans-serif;
 }
+
+.icon {
+    cursor: pointer;
+}
+
+/* LIGHT MODE */
+.light {
+    background-color: #eee !important;
+}
+
+.light p,
+.light h2,
+.light h5,
+.light label,
+.light .icon {
+    color: #444 !important;
+}
+
+.light .custom-card {
+    background-color: #fff !important;
+}
+
+.light .box,
+.light form button,
+.light footer {
+    background-color: #444 !important;
+}
+
+.light button {
+    border: none;
+}
